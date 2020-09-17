@@ -8,7 +8,7 @@ Import the navigator from the main module:
 import SlidingTabNavigator, { Screen } from 'react-native-sliding-tab-nav';
 ```
 
-###Rendering Navigator 
+### Rendering Navigator 
 You can use the navigator by defining one like the following. SlidingTabNavigator accepts only Screen from this package as childs. To add a screen you can wrap any element into the 'Screen' component.
 
 ```javascript
@@ -21,7 +21,7 @@ You can use the navigator by defining one like the following. SlidingTabNavigato
 	</Screen>
 </SlidingTabNavigator> 
 ``` 
-###Navigator Props
+### Navigator Props
 |  Prop name | Prop type  | required  | description  |
 | ------------ | ------------ | ------------ | ------------ |
 |  initialRouteName | string  |  no | Name of the initial route. If left empty, the first route is the first child.  |
@@ -30,7 +30,7 @@ You can use the navigator by defining one like the following. SlidingTabNavigato
 |  withGradient |  boolean | no  |Toggle whether to use or not a gradient background. Default = false   |
 |  gradient | string[]  |  no | Array of colors to specify the gradients colors. Useless if withGradient is false |
 
-###Screen Props
+### Screen Props
 |  Prop name | Prop type  | required  | description  |
 | ------------ | ------------ | ------------ | ------------ |
 |  name | string  |  yes | Route Name. Needs to be unique in containing navigator  |
