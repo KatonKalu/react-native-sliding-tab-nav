@@ -5,39 +5,55 @@ import {
   TextStyle,
   View,
   ViewStyle,
-  ReactChildren,
 } from 'react-native';
-import React from 'react';
+import React, { PropsWithChildren } from 'react';
 import { Props } from './SlidingTabNavigator';
+import { ReactElement } from 'react';
 
 export type ScreenProps = {
+  /**
+   * Name of the screen. This MUST be unique.
+   */
   name: string;
-  renderIcon: Element;
+  /**
+   * Icon to be rendered in the tabBar of the navigator.
+   */
+  renderIcon: ReactElement;
+  /**
+   * style the container view of the single icon
+   */
   iconContainerStyle?: StyleProp<ViewStyle>;
+  /**
+   * style the icon
+   */
   iconStyle?: StyleProp<any>;
-  renderHighlighted?: Element;
+  /**
+   * Alternative element to display when icon is highlighted.
+   * If set, this overrides iconHighlightedStyle.
+   */
+  renderHighlighted?: ReactElement;
+  /**
+   * Style to apply to the icon when state is highlighted.
+   * If renderHighlighted is set, this prop has no effect.
+   */
   iconHighlightedStyle?: StyleProp<any>;
+  /**
+   * Label to put under the icon
+   */
   label?: string;
+  /**
+   * style the label
+   */
   labelStyle?: StyleProp<TextStyle>;
-  children?: ReactChildren;
 };
 
 /**
- * Screen to use into the navigator.
- * Props are:
- *  name
- *  renderIcon = the element to be displayed or the icon in the bar
- *  renderHighlighted = the element to render when the button is highlighted
- *  styleHighlighted = the style to apply when the button is highlighted !
- * OVERRIDDEN BY renderHighlighted
- *
+ * Screen to use into the SlidingTabNavigator.
  */
-class Screen extends React.Component<ScreenProps> {
+class Screen extends React.Component<PropsWithChildren<ScreenProps>> {
   static defaultProps: Partial<Props> = {
     gradient: ['#FFF', '#aaa'],
   };
-
-  props: ScreenProps;
 
   constructor(props: ScreenProps) {
     super(props);

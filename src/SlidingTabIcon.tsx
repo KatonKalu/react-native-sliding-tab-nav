@@ -1,4 +1,4 @@
-import React, { useEffect, useRef } from 'react';
+import React, { ReactElement, useEffect, useRef } from 'react';
 import {
   Animated,
   StyleProp,
@@ -11,9 +11,9 @@ import {
 type Props = {
   iconContainerStyle?: StyleProp<ViewStyle>;
   onPress: () => void;
-  item: Element;
+  item: ReactElement;
   iconStyle?: StyleProp<any>;
-  renderHighlighted?: Element;
+  renderHighlighted?: ReactElement;
   isHighlighted?: boolean;
   iconHighlightedStyle?: StyleProp<any>;
   label?: string;

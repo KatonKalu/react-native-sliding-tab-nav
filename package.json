@@ -1,6 +1,6 @@
 {
   "name": "react-native-sliding-tab-nav",
-  "version": "1.0.0",
+  "version": "0.1.5",
   "description": "An animated custom navigator for react-native",
   "main": "dist/index.js",
   "types": "dist/index.d.ts",
@@ -8,17 +8,23 @@
     "dist"
   ],
   "scripts": {
-    "build": "babel src --out-dir dist",
-    "prepare": "npm run build"
+    "prepare": "npm run build",
+    "build": "tsc --project ./tsconfig.json",
+    "lint": "tslint --fix -p ./tsconfig.json"
   },
   "dependencies": {
     "react": "16.13.1",
     "react-native": "0.63.2",
+    "@types/react-native": "^0.63.18",
+    "@types/react": "^16.9",
     "react-native-gesture-handler": "^1.8.0",
-    "react-native-linear-gradient": "^2.5.6",
-    "react-native-reanimated": "^2.0.0-alpha.6"
+    "react-native-linear-gradient": "^2.5.6"
   },
-  "author": "KatonKalu - Luca Pasini",
+  "peerDependencies": {
+    "react": "16.13.1",
+    "react-native": "0.63.2"
+  },
+  "author": "Luca Pasini",
   "license": "ISC",
   "devDependencies": {
     "@babel/preset-typescript": "^7.10.4",
