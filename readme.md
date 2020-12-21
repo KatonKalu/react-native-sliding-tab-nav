@@ -1,7 +1,7 @@
 # react-native-sliding-tab-nav
 An npm package that provides a simple animated bottom tab navigator for React Native. 
-##Usage
-###Importing needed components
+## Usage
+### Importing needed components
 Import the navigator from the main module:
 
 ```javascript
